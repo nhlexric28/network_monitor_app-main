@@ -1,17 +1,91 @@
 body {
-    background-size: cover;
-    background-position: center;
+    margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
 }
 
-.login-page {
-    background-image: url('/static/login.jpeg');
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #1c1c1c;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    z-index: 2;
 }
 
-.signup-page {
-    background-image: url('/static/signup.jpeg');
+.sidebar.active {
+    right: 0;
 }
 
-.dashboard-page {
-    background-image: url('/static/dashboard.jpeg');
+.sidebar h2,
+.sidebar a {
+    padding: 15px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #333;
+}
+
+.sidebar a:hover {
+    background-color: #ff0000;
+}
+
+.main {
+    padding: 20px;
+    transition: margin-right 0.3s ease;
+}
+
+.main.shifted {
+    margin-right: 250px;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    z-index: 3;
+}
+
+/* New info box */
+.info-box {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #333;
+    text-align: left;
+}
+
+th {
+    background-color: #ff0000;
+    color: white;
+}
+
+.flag-btn {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
 }
